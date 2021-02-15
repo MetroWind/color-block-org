@@ -1,0 +1,283 @@
+/* ========== Resets =============================================> */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* ========== Real content =======================================> */
+
+:root
+{
+    --color-bg: white;
+    --color-fg: black;
+    --color-accent: #3742fa;
+    --sidebar-width: 400px;
+    --toc-padding: 30px;
+    --item-indent: 1em;
+    --text-width: 700px;
+    --head-number-width: 100px;
+    --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    /* --font: Recursive, "IBM Plex Sans", sans-serif; */
+    --font-code: "Rec Mono Duotone", "IBM Plex Mono", Iosevka, Inconsolata, Consolas, TheSansMono, Menlo, Monaco, "DejaVu Sans Mono", monospace;
+    --white-space: 0.8em;
+    --color-todo: #2ed573;
+    --color-done: #57606f;
+}
+
+html
+{
+    font-family: var(--font);
+    line-height: 1.4;
+}
+
+b
+{
+    font-weight: bold;
+}
+
+i
+{
+    font-style: italic;
+}
+
+a
+{
+    text-decoration: none;
+    color: var(--color-accent);
+}
+
+a:hover
+{
+    color: var(--color-bg);
+    background-color: var(--color-accent);
+}
+
+code, pre
+{
+    font-family: var(--font-code);
+}
+
+pre
+{
+    font-size: 95%;
+}
+
+p
+{
+    margin-top: var(--white-space);
+    margin-bottom: var(--white-space);
+}
+
+sub, sup
+{
+    font-size: 75%;
+    font-weight: 560;
+}
+
+sub
+{
+    vertical-align: sub;
+}
+
+sup
+{
+    vertical-align: super;
+}
+
+
+li > ul, li > ol
+{
+    padding-left: var(--item-indent);
+}
+
+h1, h2, h3, h4, h5
+{
+    margin-top: 1em;
+    margin-bottom: 1em;
+    clear: both;
+}
+
+h6
+{
+    font-size: 1rem;
+    font-style: italic;
+}
+
+h5
+{
+    font-size: 1rem;
+    color: var(--color-accent);
+}
+
+h4
+{
+    font-size: 1.2rem;
+}
+
+h3
+{
+    font-size: 1.44rem;
+}
+
+h2
+{
+    font-size: 1.728rem;
+}
+
+h1
+{
+    font-size: 2.07rem;
+}
+
+#content
+{
+    margin-left: calc(var(--sidebar-width) + var(--head-number-width));
+    max-width: var(--text-width);
+}
+
+#table-of-contents
+{
+    position: fixed;
+    width: var(--sidebar-width);
+    height: 100vh;
+    background-color: var(--color-accent);
+    padding: var(--toc-padding);
+    overflow-y: auto;
+    color: var(--color-bg);
+    top: 0px;
+    left: 0px;
+}
+
+#table-of-contents:after
+{
+    clear: both;
+}
+
+#table-of-contents a
+{
+    color: var(--color-bg);
+}
+
+.section-number-4, .section-number-3, .section-number-2
+{
+    position: absolute;
+    display: inline-block;
+    margin-left: calc(-1 * var(--head-number-width));
+    width: var(--head-number-width);
+    text-align: right;
+    padding-right: 1ex;
+}
+
+.done, .todo
+{
+    font-family: var(--font-code);
+    font-size: 1rem;
+}
+
+.done
+{
+    color: var(--color-done);
+}
+
+.todo
+{
+    color: var(--color-todo);
+}
+
+#table-of-contents .done, #table-of-contents .todo
+{
+    display: none;
+}
+
+#content code, #content pre
+{
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
+#content pre
+{
+    max-width: calc(100vw - var(--sidebar-width) - var(--head-number-width) - 50px);
+    width: calc(100vw - var(--sidebar-width) - var(--head-number-width) - 50px);
+    border-left: solid 6px var(--color-accent);
+    padding-left: 10px;
+    line-height: 1.2;
+}
+
+#content blockquote
+{
+    border-left: solid 6px var(--color-accent);
+    padding-left: 10px;
+}
+
+table
+{
+  border-collapse: collapse;
+}
+
+table > caption
+{
+    width: 100%;
+}
+
+table > tbody
+{
+    border-top: solid 2px var(--color-accent);
+}
+
+table td, table th
+{
+    padding: 0.2em 0.5em 0.2em 0.5em;
+}
+
+.org-center
+{
+    text-align: center;
+}
+
+.org-left
+{
+    text-align: left;
+}
+
+.org-right
+{
+    text-align: right;
+}
+
+/* ========== Syntax highlighting ================================> */
+
+.org-comment-delimiter, .org-comment
+{
+    font-style: italic;
+    color: var(--color-done);
+}
+
+.org-string
+{
+    color: var(--color-accent);
+}
